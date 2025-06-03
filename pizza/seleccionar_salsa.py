@@ -1,6 +1,6 @@
 from pizza.limpiar import limpiar
 
-def seleccionar_salsa():
+def seleccionar_salsa() -> str:
     ## Listado de masas disponibles. Es posible agregar mas si es necesario
     salsas = ["Salsa de Tomate", "Salsa Alfredo", "Salsa Barbecue", "Salsa Pesto"]
 

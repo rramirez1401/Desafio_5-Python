@@ -1,4 +1,4 @@
-def menu():
+def menu() -> str:
     print("""
 Menú Principal
           

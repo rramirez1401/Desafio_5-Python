@@ -1,7 +1,7 @@
-def crear_pizza():
+def crear_pizza() -> dict:
     pizza = {
         "Masa"         : "Masa Tradicional",
         "Salsa"       : "Salsa de Tomate",
-        "Ingredientes" : None
+        "Ingredientes" : []
     }
     return pizza

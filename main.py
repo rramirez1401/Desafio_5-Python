@@ -3,7 +3,9 @@ from pizza.crear_pizza import crear_pizza
 from pizza.limpiar import limpiar
 from pizza.seleccionar_masa import seleccionar_masa
 from pizza.seleccionar_salsa import seleccionar_salsa
-
+from pizza.agregar_ingredientes import agregar_ingredientes
+from pizza.eliminar_ingredientes import eliminar_ingredientes
+from pizza.mostrar_pizza import mostrar_pizza
 
 def main():
 
@@ -16,7 +18,7 @@ def main():
         if cont == 0:
             cont += 1
             limpiar()
-            print("BIENVENIDO A PIZZAJUT\nArma tu pizza a gusto!!!")
+            print("BIENVENIDO A PIZZAJUT\nArma tu pizza a gusto!!!\n(De forma predefinida la pizza viene con masa tradicional y salsa de tomate)")
 
         ## Imprimir Menú
         menu()
@@ -37,17 +39,39 @@ def main():
             salsa = seleccionar_salsa()
             if salsa != None:
                 pizza["Salsa"] = salsa
+            limpiar()
 
-        ## Opcion 3: 
+        ## Opcion 3: Agregar Ingredientes
         elif opcion == "3":
-            print("3")
+            limpiar()
+            ingre = agregar_ingredientes(pizza["Ingredientes"])
+            if ingre != None:
+                pizza["Ingredientes"] = ingre
+            limpiar()
 
+        ## Opcion 4: Eliminar ingredientes
         elif opcion == "4":
-            print("4")
+            limpiar()
+            if len(pizza["Ingredientes"]) >= 1:
+                ingre_actual = eliminar_ingredientes(pizza["Ingredientes"])
+                if ingre_actual is None:
+                    ingre_actual = []
+                pizza["Ingredientes"] = ingre_actual
+            else:
+                limpiar()
+                input("Aún no has agregado ingredientes\nEnter para continuar...")
+            limpiar()
 
+        ## Opcion 5: Mostrar la pizza
         elif opcion == "5":
-            print("5")
+            limpiar()
+            mostrar_pizza(pizza)
+            limpiar()
+
+        ## Opcion 6: Salir
         elif opcion == "6":
+            limpiar()
+            print("Vuelve Pronto\n")
             exit()
         else:
             limpiar()

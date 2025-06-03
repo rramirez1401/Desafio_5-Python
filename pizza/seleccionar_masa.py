@@ -1,6 +1,6 @@
 from pizza.limpiar import limpiar
 
-def seleccionar_masa():
+def seleccionar_masa() -> str:
     ## Listado de masas disponibles. Es posible agregar mas si es necesario
     base = ["Masa tradicional", "Masa delgada", "Masa con bordes de queso"]
 
